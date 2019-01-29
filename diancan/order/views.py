@@ -29,5 +29,7 @@ def weixin_main(request):
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
 
+
 @csrf_exempt
 def autoreply(request):
+    return HttpResponse('您已点好')

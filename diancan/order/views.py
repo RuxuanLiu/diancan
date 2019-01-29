@@ -22,6 +22,7 @@ def weixin_main(request):
         sha1 = hashlib.sha1()
         map(sha1.update, hashlist)
         hashcode = sha1.hexdigest()
+        print("handle/GET func: hashcode, signature: ", hashcode, signature)
         if hashcode == signature:
           return HttpResponse(echostr)
         else:

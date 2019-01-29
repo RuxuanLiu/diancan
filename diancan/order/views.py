@@ -3,6 +3,7 @@ import json
 from django.utils.encoding import smart_str
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from wechatpy import parse_message,create_reply
 # Create your views here
 
 
@@ -35,4 +36,8 @@ def weixin_main(request):
 
 @csrf_exempt
 def autoreply(request):
-    return HttpResponse('您已点好')
+    msg = parse_message(request.body)
+    print(msg)
+    reply = create_reply('你已点好', message=msg)
+    xml = reply.render()
+    return HttpResponse(xml)

@@ -18,5 +18,6 @@ from django.contrib import admin
 from . import views
 app_name = 'order'
 urlpatterns = [
-    url('/', views.weixin_main, name='weixin_main'),
+    url('', views.weixin_main, name='weixin_main'),
+    url('/showpage',views.showpage,name='showpage'),
 ]

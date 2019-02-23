@@ -19,5 +19,5 @@ from . import views
 app_name = 'order'
 urlpatterns = [
     url('main/', views.weixin_main, name='weixin_main'),
-    url('showpage/',views.showpage, name='showpage'),
+    url('showpage',views.showpage, name='showpage'),
 ]

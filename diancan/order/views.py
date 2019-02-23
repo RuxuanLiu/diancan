@@ -41,3 +41,7 @@ def autoreply(request):
     reply = create_reply('你已点好', message=msg)
     xml = reply.render()
     return HttpResponse(xml)
+
+def showpage(request):
+
+    return HttpResponse("这是主页")

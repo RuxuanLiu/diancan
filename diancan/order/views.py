@@ -42,6 +42,7 @@ def autoreply(request):
     xml = reply.render()
     return HttpResponse(xml)
 
+@csrf_exempt
 def showpage(request):
 
-    return HttpResponse("这是主页")
+    return HttpResponse("这是主页,开发中")
